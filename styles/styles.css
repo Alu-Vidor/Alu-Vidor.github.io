@@ -1,46 +1,114 @@
-html, body {
-    height: 100%;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    display: flex;
-    flex-direction: column;
 }
-header, footer {
-    background-color: #333;
+
+header {
+    width: 100%;
+    background-color: #007bff;
     color: white;
-    padding: 20px 0;
-    text-align: center;
+    padding: 20px 20px;
 }
-nav {
-    background-color: #444;
-    padding: 10px 0;
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
 }
-nav a {
-    margin: 0 15px;
+
+header nav ul li {
+    padding: 0 10px;
+}
+
+header nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    transition: color 0.3s ease;
 }
-main {
-    flex: 1;
-    padding: 20px;
+
+header nav ul li a:hover {
+    color: #d4e2ff;
+}
+
+.content-section {
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    height: auto; 
+    margin-bottom: auto;
+    padding: 20px;
 }
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+
+.photo {
+    flex-basis: 50%;
+    padding-right: 20px;
 }
-section {
+
+.photo img {
+    width: 100%;
+    border-radius: 20px;
+    display: block;
+}
+
+.quote {
+    flex-basis: 50%;
+    background-color: #ffc107;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.quote h2 {
+    color: #333;
     margin-bottom: 20px;
 }
-@media screen and (max-width: 600px) {
-    .container {
+
+.quote p {
+    color: #666;
+    font-size: 72px;
+}
+
+footer {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 992px) {
+    .content-section {
+        flex-direction: column;
+    }
+
+    .photo, .quote {
         width: 100%;
+    }
+
+    .photo {
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    header nav ul li {
+        padding: 5px 0;
     }
 }
